@@ -1,0 +1,70 @@
+<div *ngIf="user && profile">
+    <div class="columns is-mobile is-centered">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+            <div *ngIf="profile_picture;else placeholder" class="avatar">
+
+                <figure id="thumbnail" [ngStyle]="{ 'background-image': 'url(' + 'http://localhost:8888/' + profile_picture.attributes.uri.url + ')'}">
+                </figure>
+
+            </div>
+
+
+
+
+            <p class="content is-large has-text-centered titleBig">{{user.attributes.name}}</p>
+
+            <div class="info">
+                <p><span class="infoL"><i class="icList fas fa-school"></i></span><span class="infoR">
+                        {{profile.attributes.field_school}}</span></p>
+                <p><span class="infoL"><i class="icList fas fa-home"></i> </span><span class="infoR">
+                        {{profile.attributes.field_location}}</span></p>
+                <p><span class="infoL"><i class="icList fas fa-quote-left"></i> </span>
+                    <span class="infoR quote" *ngIf="profile.attributes.field_tagline;else optional">
+                        {{profile.attributes.field_tagline}}</span>
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div *ngIf="profile.attributes.field_slaap_type" class="columns is-mobile is-centered">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+            <p class="small">Type slaper</p>
+
+
+            <p>{{profile.attributes.field_slaap_type}}</p>
+
+            <img *ngIf="profile.attributes.field_slaap_type == 'Morning person'" class="resIcon" src="../../../../assets/svg/alarm-clock-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'Screen addict'" class="resIcon" src="../../../../assets/svg/mobile-phone-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'Panda'" class="resIcon" src="../../../../assets/svg/panda-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'Restless bat'" class="resIcon" src="../../../../assets/svg/flying-bat-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'Sleepyhead'" class="resIcon" src="../../../../assets/svg/sleepy-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'Sleep lover'" class="resIcon" src="../../../../assets/svg/pillow-svgrepo-com.svg">
+            <img *ngIf="profile.attributes.field_slaap_type == 'King/Queen of sleep'" class="resIcon" src="../../../../assets/svg/crown-svgrepo-com.svg">
+
+        </div>
+    </div>
+
+
+
+
+    <ng-template #placeholder>
+        <div class="avatar">
+
+            <figure id="thumbnail" style="background-image: url('http://www.redsaludtocache.gob.pe/wp-content/themes/corporatebusiness/images/thumbnail.png')">
+            </figure>
+
+        </div>
+    </ng-template>
+
+
+
+    <ng-template #optional>
+        <span class="infoR quote">...</span>
+    </ng-template>
+
+</div>

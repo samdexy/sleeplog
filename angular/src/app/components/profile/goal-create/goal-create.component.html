@@ -1,0 +1,25 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+    <div class="form">
+
+      <div class="field">
+        <div class="control">
+          <p>
+            Tegen
+            <span><input class="input" type="date" placeholder="dd/mm/yyyy" #date></span>wil ik gemiddeld
+            <span><input class="input" type="number" placeholder="0" #average></span>uur per nacht slapen.
+          </p>
+        </div>
+      </div>
+
+
+
+      <a (click)="createGoal(date, average)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+      <p class="valMessage" [innerHTML]="msg"></p>
+
+    </div>
+
+  </div>
+</div>

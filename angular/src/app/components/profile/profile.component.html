@@ -1,0 +1,100 @@
+<div *ngIf="user && profile">
+    <div class="columns is-mobile is-centered">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+            <div *ngIf="profile_picture;else placeholder" class="avatar">
+
+                <figure id="thumbnail" [ngStyle]="{ 'background-image': 'url(' + 'http://localhost:8888/' + profile_picture.attributes.uri.url + ')'}">
+                </figure>
+
+            </div>
+
+
+
+
+            <p class="content is-large has-text-centered titleBig">Welkom, {{user.attributes.name}}</p>
+            <a routerLink="/profile/edit/{{user.id}}" class="btnEdit"><i class="icon fas fa-edit"></i></a>
+
+            <div class="info">
+                <p><span class="infoL"><i class="icList fas fa-school"></i></span><span class="infoR">
+                        {{profile.attributes.field_school}}</span></p>
+                <p><span class="infoL"><i class="icList fas fa-home"></i> </span><span class="infoR">
+                        {{profile.attributes.field_location}}</span></p>
+                <p><span class="infoL"><i class="icList fas fa-quote-left"></i> </span>
+                    <span class="infoR quote" *ngIf="profile.attributes.field_tagline;else optional">
+                        {{profile.attributes.field_tagline}}</span>
+                </p>
+            </div>
+
+            <a (click)="logout()" class="btnLogout">Log out</a>
+
+        </div>
+
+
+    </div>
+
+    <div class="columns is-mobile is-centered">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+            <p class="small">Type slaper</p>
+            <div *ngIf="profile.attributes.field_slaap_type;else btnCreateType">
+
+                <p>{{profile.attributes.field_slaap_type}}</p>
+
+                <a routerLink="/profile/test/{{user.id}}" class="btnEdit"><i class="icon fas fa-edit"></i></a>
+
+                <img *ngIf="profile.attributes.field_slaap_type == 'Morning person'" class="resIcon" src="../../../assets/svg/alarm-clock-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'Screen addict'" class="resIcon" src="../../../assets/svg/mobile-phone-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'Panda'" class="resIcon" src="../../../assets/svg/panda-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'Restless bat'" class="resIcon" src="../../../assets/svg/flying-bat-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'Sleepyhead'" class="resIcon" src="../../../assets/svg/sleepy-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'Sleep lover'" class="resIcon" src="../../../assets/svg/pillow-svgrepo-com.svg">
+                <img *ngIf="profile.attributes.field_slaap_type == 'King/Queen of sleep'" class="resIcon" src="../../../assets/svg/crown-svgrepo-com.svg">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="columns is-mobile is-centered">
+        <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+            <p class="small">Mijn doel</p>
+
+            <div *ngIf="goal;else btnCreateGoal">
+                <a routerLink="/profile/goal/edit/{{user.id}}" class="btnEdit"><i class="icon fas fa-edit"></i></a>
+
+                <div id="lblGoal">
+                    <i class="icGoal fas fa-bullseye"></i>
+                    <p class="content is-large has-text-centered titleBig">{{goal.attributes.field_goal | date: 'MMM
+                        dd, yyyy'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #btnCreateGoal>
+        <a routerLink="/profile/goal/add/{{user.id}}" class="button is-outlined is-rounded is-medium btnPrimary">STEL
+            DOEL OP</a>
+    </ng-template>
+
+    <ng-template #placeholder>
+        <div class="avatar">
+
+            <figure id="thumbnail" style="background-image: url('http://www.redsaludtocache.gob.pe/wp-content/themes/corporatebusiness/images/thumbnail.png')">
+            </figure>
+
+        </div>
+    </ng-template>
+
+    <ng-template #btnCreateType>
+        <a routerLink="/profile/test/{{user.id}}" class="button is-outlined is-rounded is-medium btnPrimary">DOE QUIZ</a>
+    </ng-template>
+
+    <ng-template #optional>
+        <span class="infoR quote">...</span>
+    </ng-template>
+
+    <app-nav [navTemplate]="navTemplate"></app-nav>
+</div>

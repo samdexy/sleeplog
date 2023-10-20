@@ -1,0 +1,13 @@
+<div class="graphWrap" *ngIf="entries">
+        <div class="graph">
+                <canvas baseChart width="400" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+</div>
+
+<div class="filterWrap">
+        <div class="filters">
+
+        </div>
+</div>

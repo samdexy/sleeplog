@@ -1,0 +1,77 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+    <mat-tab-group>
+
+      <mat-tab label="Logboek">
+        <div *ngTemplateOutlet="tabEntries">
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Statistieken">
+        <div>
+          <app-stats [statsTemplate]="statsTemplate"></app-stats>
+
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>
+
+<ng-template #tabEntries>
+
+  <div class="entryWrap" *ngIf="user">
+    <div class="entrySingle" *ngFor="let entry of entries | orderBy:'attributes.field_created' : 'desc'">
+      <div class="header">
+        <p class="content is-large">{{entry.attributes.field_created| date: 'MMM dd, yyyy'}}</p>
+        <a routerLink="/track/edit/{{entry.id}}" class="btnEdit"><i class="icon fas fa-edit"></i></a>
+        <a (click)="deleteEntry(entry.attributes.drupal_internal__nid)" class="btnDelete"><i class="icon fas fa-trash-alt"></i></a>
+
+      </div>
+
+      <hr>
+
+      <div class="info">
+        <p>
+          {{entry.attributes.field_note}}
+        </p>
+        <div>
+          <label class="small">Gaan slapen</label>
+          <p>{{entry.attributes.field_bedtime}}</p>
+
+          <label class="small">Opgestaan</label>
+          <p>{{entry.attributes.field_risen}}</p>
+        </div>
+
+        <div>
+          <label class="small">Slaap kwaliteit</label>
+          <span class="rating" *ngFor="let x of [].constructor(entry.attributes.field_quality)">
+            <i class="fas fa-star"></i>
+          </span>
+
+          <label class="small">Uitgerust</label>
+          <span class="rating" *ngFor="let x of [].constructor(entry.attributes.field_rested)">
+            <i class="fas fa-star"></i>
+          </span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div id="btnArea" class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+    <a *ngIf="bool == true" routerLink="/track/add" class="is-medium btnNew">
+      <i class="fas fa-2x fa-plus"></i>
+    </a>
+
+  </div>
+
+</ng-template>
+
+
+
+
+<app-nav [navTemplate]="navTemplate"></app-nav>

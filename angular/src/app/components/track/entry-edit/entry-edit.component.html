@@ -1,0 +1,38 @@
+<div *ngIf="entry" class="columns is-mobile is-centered">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+        <div class="form">
+
+            <div class="field">
+                <div class="control">
+
+
+                    <span>Gaan slapen om<input class="input" type="time" value="{{entry.attributes.field_bedtime}}"
+                            #bedTime></span>
+                    <span>Opgestaan om<input class="input" type="time" value="{{entry.attributes.field_risen}}"
+                            #riseTime></span>
+
+                    <span>Slaap kwaliteit
+                        <star-rating class="rating" [starType]="'svg'" [rating]="scoreQuality" (ratingChange)="onRatingChangeQuality($event)"></star-rating>
+
+                    </span>
+                    <span>Uitgerust
+                        <star-rating class="rating" [starType]="'svg'" [rating]="scoreRested" (ratingChange)="onRatingChangeRested($event)"></star-rating>
+                    </span>
+
+                    <span>Opmerkingen (optioneel)
+                        <textarea type="text" rows="5" #noteStr>{{entry.attributes.field_note}}</textarea>
+                    </span>
+                </div>
+            </div>
+
+
+
+            <a (click)="patchEntry(bedTime, riseTime, noteStr)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+            <p class="valMessage" [innerHTML]="msg"></p>
+
+        </div>
+
+    </div>
+</div>

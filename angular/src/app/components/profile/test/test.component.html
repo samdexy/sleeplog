@@ -1,0 +1,339 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+
+    <div class="form">
+
+      <div class="field">
+
+        <div class="control" *ngIf="step == 1">
+          <p class="content is-large">Vraag 1: Slaap…</p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              I &lt;3 it
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              is nodig, maar heb er niet altijd even veel zin in…
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              Zo nutteloos, ik doe liever iets anders!
+            </span>
+          </label>
+        </div>
+
+
+        <div class="control" *ngIf="step == 2">
+          <p class="content is-large">Vraag 2: Lang uitslapen in het weekend…
+          </p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              Sowiesooooo! Mij zie je voor 10u niet verschijnen!
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              Hoeft niet, ik word wakker op mijn vast uur!
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              Is voor mij niet langer dan 9u-9u30.
+            </span>
+          </label>
+        </div>
+
+        <div class="control" *ngIf="step == 3">
+          <p class="content is-large">Vraag 3: Slaap jij makkelijk in?
+          </p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              Ik lig vaak nog lang te woelen en piekeren
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              Ik slaap relatief snel in
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              Ik slaap vrijwel meteen in
+            </span>
+          </label>
+        </div>
+
+        <div class="control" *ngIf="step == 4">
+          <p class="content is-large">Vraag 4: Ochtendmodus:
+          </p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              Zombie
+
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              Fris als ’n vis
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              Groggy maar gaat snel over
+            </span>
+          </label>
+        </div>
+
+        <div class="control" *ngIf="step == 5">
+          <p class="content is-large">Vraag 5: Overdag
+
+          </p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              Blijk ik gewoon de hele dag door geeuwen
+
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              Kom ik er tegen de middag wel door
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              Wordt ik tegen de avond goed moe
+            </span>
+          </label>
+        </div>
+
+        <div class="control" *ngIf="step == 6">
+          <p class="content is-large">Vraag 6: Screen addict or angel?
+
+
+          </p>
+          <hr>
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=1">
+            <span>
+              #Gamingislive: tot ’s avonds laat!
+
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=2">
+            <span>
+              #Netflix: all night long
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=3">
+            <span>
+              #FOMO: no way dat ik een gesprek mis, mijn GSM is mijn vaste bed-buddy
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=4">
+            <span>
+              #nophone: Mijn GSM komt mijn kamer niet in!
+            </span>
+          </label>
+
+          <label class="radio">
+            <input type="radio" name="options" (change)="value=5">
+            <span>
+              #SMART-phone: mijn GSM/scherm ligt in mijn kamer, maar ik gebruik hem niet meer of beperkt.
+            </span>
+          </label>
+        </div>
+
+        <div class="control" *ngIf="step == 7">
+          <p class="content is-large">Jij bent een... {{result}}!
+
+          </p>
+
+
+          <img *ngIf="result == 'Morning person'" class="resIcon" src="../../../../assets/svg/alarm-clock-svgrepo-com.svg">
+          <img *ngIf="result == 'Sleep lover'" class="resIcon" src="../../../../assets/svg/pillow-svgrepo-com.svg">
+          <img *ngIf="result == 'Restless bat'" class="resIcon" src="../../../../assets/svg/flying-bat-svgrepo-com.svg">
+          <img *ngIf="result == 'Screen addict'" class="resIcon" src="../../../../assets/svg/mobile-phone-svgrepo-com.svg">
+          <img *ngIf="result == 'Panda'" class="resIcon" src="../../../../assets/svg/panda-svgrepo-com.svg">
+          <img *ngIf="result == 'Sleepyhead'" class="resIcon" src="../../../../assets/svg/sleepy-svgrepo-com.svg">
+          <img *ngIf="result == 'King/Queen of sleep'" class="resIcon" src="../../../../assets/svg/crown-svgrepo-com.svg">
+
+
+
+
+          <p class="content">
+            {{resultNote}}
+
+
+          </p>
+          <p>Hier zijn enkele tips voor jou:</p>
+          <div class="tips" *ngFor="let answer of list; let i = index">
+
+            <div *ngIf="i == 0">
+              <p *ngIf="answer == 1">
+                Terecht dat je gek bent op slaap! Slaap is de max. Bovendien heeft het een hele hoop voordelen voor je!
+                Je kan je
+                beter concentreren, hebt een beter humeur, je bent weerbaarder tegen ziektes,… Bovendien leef je op
+                termijn ook
+                gezonder! Slaaptekort verhoogt namelijk je kansen op het krijgen van diabetes, overgewicht en
+                hartziektes op latere
+                leeftijd. Sleep on!
+
+              </p>
+
+              <p *ngIf="answer == 2">
+                Voldoende slaap heeft een hele hoop voordelen heeft voor je! Je kan je beter concentreren, hebt een
+                beter humeur,
+                je bent weerbaarder tegen ziektes,… Bovendien leef je op termijn ook gezonder! Slaaptekort verhoogt
+                namelijk je
+                kansen op het krijgen van diabetes, overgewicht en hartziektes op latere leeftijd. Sleep on!
+
+              </p>
+              <p *ngIf="answer == 3">
+                Denk er aan dat voldoende slaap een hele hoop voordelen heeft voor je! Je kan je beter concentreren,
+                hebt een beter
+                humeur, je bent weerbaarder tegen ziektes,… Bovendien leef je op termijn ook gezonder! Slaaptekort
+                verhoogt
+                namelijk je kansen op het krijgen van diabetes, overgewicht en hartziektes op latere leeftijd. Try it!
+
+              </p>
+            </div>
+
+            <div *ngIf="i == 1">
+              <p *ngIf="answer == 1">
+                Uitslapen is fijn, dat weet iedereen… toch is het jammer genoeg niet zo goed voor je slaappatroon, je
+                brengt het namelijk helemaal in de war waardoor je daarna terug moeilijker kan inslapen. Bovendien zijn
+                de uren die je in de voormiddag bijslaapt, vaak niet zo productief; je lichaam is immers al in
+                ‘dagmodus’ waardoor je enkel licht slaapt. Die lichte slaap zorgt ervoor dat je vaak een stuk groggy-er
+                wakker wordt! Probeer in het weekend niet langer dan 2 uren later op te staan dan het uur waarop je
+                tijdens de week opstaat.
+
+              </p>
+
+              <p *ngIf="answer == 2">
+                Super dat je steeds op regelmatige tijdstippen opstaat, houden zo! Regelmaat zorgt er voor dat je
+                steeds makkelijk kan inslapen.
+
+
+              </p>
+              <p *ngIf="answer == 3">
+                Uitslapen is fijn, dat weet iedereen… toch is het goed om je slaappatroon zo regelmatig mogelijk te
+                houden. Uitslapen zorgt er immers voor dat dit patroon in de war geraakt en je ’s avonds moeilijker in
+                slaapt valt. Bovendien zijn de uren die je in de voormiddag bijslaapt, vaak niet zo productief; je
+                lichaam is immers al in ‘dagmodus’ waardoor je enkel licht slaapt.
+
+
+              </p>
+            </div>
+
+            <div *ngIf="i == 2">
+              <p *ngIf="answer == 1">
+                Piekeren in bed is niet fijn. Neem ruim voor je gaat slapen even de tijd om je ‘zorgen’ even op papier
+                te zetten. Zo kan je die letterlijk aan de kant schuiven wanneer je gaat slapen!
+
+              </p>
+
+              <p *ngIf="answer == 2">
+                Voor je gaat slapen is het belangrijk dat je lichaam tot rust komt. Een slaapritueel kan hierbij
+                helpen: het geeft immers het signaal aan je lichaam dat het tijd is om rustig te worden!
+
+
+              </p>
+
+            </div>
+            <div *ngIf="i == 3">
+              <p *ngIf="answer == 1">
+                Wanneer je je ’s ochtends een echte zombie voelt is de kans groot dat je te weinig slaapt. Probeer er
+                wat vroeger in te kruipen!
+
+              </p>
+
+            </div>
+            <div *ngIf="i == 4">
+              <p *ngIf="answer == 1">
+                Wanneer je je overdag steeds vermoeid voelt en op elk moment zou kunnen slapen, wijst dit er op dat je
+                te weinig slaapt. Probeer wat meer slaap te halen!
+
+              </p>
+
+            </div>
+            <div *ngIf="i == 5">
+
+
+              <p *ngIf="answer == 3">
+                Denk er aan dat schermgebruik ’s avonds af te raden is om verschillende redenen: 1) het blauwe licht
+                van je scherm zorgt ervoor dat de aanmaak van het slaaphormoon geremd wordt, waardoor je moeilijker
+                inslaapt en minder diep slaapt. 2) het is verslavend, het houdt je langer wakker dan nodig 3) het geeft
+                je enorm veel extra prikkels, waardoor je niet tot rust kan komen om te slapen.
+
+
+              </p>
+              <p *ngIf="answer == 4">
+                Super dat je verstandig om gaat met schermen ’s avonds. Is het soms moeilijk om aan de verleiding te
+                weerstaan? Zorg dat je schermen buiten handbereik liggen! Nog beter is ze buiten je kamer leggen
+                natuurlijk ☺
+
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <a (click)="previous()" id="btnPrev" class="btn"><i class="fas fa-2x fa-arrow-left"></i></a>
+
+      <a (click)="next()" *ngIf="6 >= step;else finish" id="btnNext" class="btn button is-outlined is-rounded is-medium">VOLGENDE</a>
+
+      <p class="valMessage" [innerHTML]="msg"></p>
+
+    </div>
+
+  </div>
+</div>
+
+<ng-template #finish>
+  <a (click)="patchData()" id="btnNext" class="btn button is-outlined is-rounded is-medium">OPSLAAN</a>
+</ng-template>

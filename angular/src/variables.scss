@@ -1,0 +1,35 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(~/assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(~/assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(~/assets/fonts/Avenir-Medium.ttf);
+
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}

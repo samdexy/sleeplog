@@ -1,0 +1,36 @@
+<div class="columns is-mobile is-centered">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+        <div class="form">
+
+            <div class="field">
+                <div class="control">
+
+
+                    <span>Gaan slapen om<input class="input" type="time" #bedTime></span>
+                    <span>Opgestaan om<input class="input" type="time" #riseTime></span>
+
+                    <span>Slaap kwaliteit
+                        <star-rating class="rating" [starType]="'svg'" [rating]="0" (ratingChange)="onRatingChangeQuality($event)"></star-rating>
+
+                    </span>
+                    <span>Uitgerust
+                        <star-rating class="rating" [starType]="'svg'" [rating]="0" (ratingChange)="onRatingChangeRested($event)"></star-rating>
+                    </span>
+
+                    <span>Opmerkingen (optioneel)
+                        <textarea type="text" rows="5" #noteStr></textarea>
+                    </span>
+                </div>
+            </div>
+
+
+
+            <a (click)="createEntry(bedTime, riseTime, noteStr)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+            <p class="valMessage" [innerHTML]="msg"></p>
+
+        </div>
+
+    </div>
+</div>

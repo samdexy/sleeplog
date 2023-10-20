@@ -1,0 +1,47 @@
+<div class="columns toolPage is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+    <mat-tab-group>
+
+      <mat-tab label="Tools">
+        <div *ngTemplateOutlet="tabTools">
+
+        </div>
+      </mat-tab>
+      <mat-tab label="Tips">
+        <div>
+          <app-tips [tipsTemplate]="tipsTemplate"></app-tips>
+
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>
+
+<ng-template #tabTools>
+
+  <div class="toolWrap" *ngIf="user">
+    <div class="toolSingle" *ngFor="let tool of tools">
+      <div class="header">
+        <p class="content is-large">{{tool.attributes.title}}</p>
+      </div>
+
+      <hr>
+
+      <div class="info">
+        <p>{{tool.attributes.field_description}}</p>
+        <iframe [src]="tool.attributes.field_link" frameborder="0" allowfullscreen></iframe>
+
+      </div>
+
+
+    </div>
+  </div>
+
+</ng-template>
+
+
+
+
+<app-nav [navTemplate]="navTemplate"></app-nav>

@@ -1,0 +1,121 @@
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../../assets/fonts/Avenir-Medium.ttf);
+
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+
+.toolSingle {
+	min-height: 250px;
+	background: $white;
+	padding: 15px;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+
+
+	.info { 
+		margin-bottom: 20px;
+	
+		div {
+			display: inline-block;
+			width: 50%;
+	
+			p {
+				font-family: $font_2
+			}
+	
+			label {
+				display: inline-block;
+				width: 100%
+			}
+		}
+		p {
+			margin-bottom: 15px;
+		}
+	
+		span {
+			color: $purple
+	
+	}
+
+	iframe{
+		display: block;
+		width: 100%;
+		height: 315px;
+		margin: 0 auto;
+	}
+	}
+
+	.header {
+		margin-top: 25px;
+	
+	
+		p {
+			line-height: 0;
+			padding: 0px 0px 10px 0px
+		}
+	}
+}
+
+.toolWrap {
+	
+	&:first-of-type {
+		margin-top: 40px;
+      }
+}
+
+
+
+
+
+
+
+
+.small{
+	color: $gray
+}
+
+
+
+
+
+
+
+
+.icon {
+	color: $gray;
+	font-size: 20px;
+	
+}

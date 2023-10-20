@@ -1,0 +1,27 @@
+$white: #ffffff;
+$purple: #876bd1;
+$black_10: rgba(0, 0, 0, 0.10);
+
+#bottom-nav {
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background: $white;
+  bottom: 0;
+  box-shadow: 0px -3px 10px $black_10;
+  z-index: 10000;
+  
+}
+
+.column {
+  height: 20px;
+  color: #ffffff;
+  padding-top: 25px;
+  text-align: center
+  
+
+}
+
+a {
+    color: $purple
+}

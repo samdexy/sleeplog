@@ -1,0 +1,41 @@
+
+  <div *ngIf="profiles && user" class="columns is-mobile is-centered">
+    <div class="column userList is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+      <div class="listItem" *ngFor="let profile of profiles | orderBy:'attributes.distance':false">
+        <div *ngIf="profile.friend !== true && profile.requested !== true || profile.requested == false">
+            <a  routerLink="/map/profile/{{profile.id}}">
+              <div *ngIf="profile.profile_img;else placeholder" class="avatarThumb">
+      
+                <figure [ngStyle]="{ 'background-image': 'url(' + 'http://localhost:8888' + profile.profile_img.attributes.uri.url + ')'}">
+                </figure>
+      
+              </div>
+              <p class="meItem" *ngIf="profile.username == user.attributes.name;else notMeItem">{{profile.username}} (ik)</p>
+              <p class="small distance">afstand: {{profile.attributes.distance}} km</p>
+              <ng-template #notMeItem>
+                <p>{{profile.username}}</p>
+              </ng-template>
+            
+          <hr>
+            </a>
+            <span>
+            <a (click) = "sendRequest(profile.id, profile.profile_id, $event)" class="btn accept"> <i class="fas fa-check"></i> Accepteer</a>
+            <a (click) = "ignoreRequest(profile.id,profile.profile_id, $event)" class="btn ignore"> <i class="fas fa-times"></i> Negeer</a>
+          </span>
+        </div>
+    
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
+  <ng-template #placeholder>
+    <div class="avatarThumb">
+  
+      <figure style="background-image: url('http://www.redsaludtocache.gob.pe/wp-content/themes/corporatebusiness/images/thumbnail.png')">
+      </figure>
+  
+    </div>
+  </ng-template>

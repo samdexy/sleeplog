@@ -1,0 +1,16 @@
+<div class="tipWrap" *ngIf="user">
+    <div class="tipSingle" *ngFor="let tip of tips">
+      <div class="header">
+        <p class="content is-large">{{tip.attributes.title}}</p>
+      </div>
+
+      <hr>
+
+  
+    
+      <div class="info" innerHTML="{{tip.attributes.field_tips.value}}"></div>
+
+    </div>
+  </div>
+
+  <app-nav [navTemplate]="navTemplate"></app-nav>

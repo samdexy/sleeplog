@@ -1,0 +1,52 @@
+<div class="columns is-mobile is-centered">
+    <div class="column searchInput is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" placeholder="Search user" value="" (input)="onSearchChange($event.target.value)">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="profiles && user && strSearch != ''" class="columns is-mobile is-centered">
+    <div class="column searchList is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+      <div class="listItem" *ngFor="let profile of profiles | orderBy:'attributes.distance':false">
+        <div *ngIf="profile.username.toUpperCase().indexOf(strSearch.toUpperCase()) > -1;">
+            <a  routerLink="/map/profile/{{profile.id}}">
+              <div *ngIf="profile.profile_img;else placeholder" class="avatarThumb">
+      
+                <figure [ngStyle]="{ 'background-image': 'url(' + 'http://localhost:8888' + profile.profile_img.attributes.uri.url + ')'}">
+                </figure>
+      
+              </div>
+              <p class="meItem" *ngIf="profile.username == user.attributes.name;else notMeItem">{{profile.username}} (ik)</p>
+              <p class="small distance">afstand: {{profile.attributes.distance}} km</p>
+              <ng-template #notMeItem>
+                <p>
+                  {{profile.username}}
+                </p>
+              </ng-template>
+            
+          <hr>
+            </a>
+            <span *ngIf="profile.username !== user.attributes.name">
+            <a (click)="sendRequest(profile.id, profile.profile_id, $event)" *ngIf="profile.requested == false && profile.friend == false" class="iconAdd"><i class="fas fa-plus"></i></a>
+            <p *ngIf="profile.requested == true" class="msgReq"><i class="fas fa-check"></i> verzoek verstuurd!</p>
+          </span>
+        </div>
+    
+  
+      </div>
+  
+    </div>
+  
+  </div>
+
+  <ng-template #placeholder>
+    <div class="avatarThumb">
+  
+      <figure style="background-image: url('http://www.redsaludtocache.gob.pe/wp-content/themes/corporatebusiness/images/thumbnail.png')">
+      </figure>
+  
+    </div>
+  </ng-template>

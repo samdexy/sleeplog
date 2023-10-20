@@ -1,0 +1,61 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+    <form>
+      <div class="field">
+        <label class="label">Gebruikersnaam*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="username" type="text" placeholder="Gebruikersnaam" name="username" value="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="email" type="text" placeholder="Email" name="email" value="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Wachtwoord*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="password" type="password" placeholder="Wachtwoord" name="password" value="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Geboortedatum*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="birthday" type="date" name="birthday" placeholder="dd-mm-yyyy">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Gemeente*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="location" type="text" name="location" placeholder="gemeente">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">School*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="school" type="text" name="school" placeholder="school">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Tagline</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="tagline" type="text" name="tagline" placeholder="tagline">
+        </div>
+      </div>
+
+      <p class="valMessage" [innerHTML]="msg"></p>
+      <a (click)="register()" class="button is-outlined is-rounded is-medium btnCreate">REGISTREER</a>
+    </form>
+
+    <p class="authSwitch">
+      <a routerLink="/login">Log in</a>
+    </p>
+  </div>
+</div>

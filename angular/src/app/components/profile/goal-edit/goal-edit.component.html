@@ -1,0 +1,26 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+    <div *ngIf="goal" class="form">
+
+      <div class="field">
+        <div class="control">
+          <p>
+            Tegen
+            <span><input class="input" type="date" value="{{goal.attributes.field_goal}}" #date></span>wil ik gemiddeld
+            <span><input class="input" type="number" value="{{goal.attributes.field_average}}" placeholder="0" #average></span>uur
+            per nacht slapen.
+          </p>
+        </div>
+      </div>
+
+
+
+      <a (click)="patchGoal(date, average)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+      <p class="valMessage" [innerHTML]="msg"></p>
+
+    </div>
+
+  </div>
+</div>

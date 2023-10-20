@@ -1,0 +1,28 @@
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+.graphWrap {
+	min-height: 250px;
+	background: none;
+	
+	margin-bottom: 40px;
+	padding: 15px;
+    position: relative;
+    
+    .graph {
+        margin-top: 15px;
+        color: #ffffff!important
+      }
+}
+
+.filterWrap {
+	min-height: 150px;
+	background: none;
+	margin-bottom: 40px;
+	padding: 15px;
+    position: relative;
+    
+}

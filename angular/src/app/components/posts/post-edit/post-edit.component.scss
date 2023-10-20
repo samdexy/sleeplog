@@ -1,0 +1,150 @@
+@import '~css-star-rating/scss/star-rating';
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$grey: #797979;
+$red: #A33434;
+
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../../assets/fonts/Avenir-Medium.ttf);
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+.column {
+	min-height: 200px;
+	color: $black;
+	background: $white;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+	
+}
+
+.form{
+	margin-bottom: 50px;
+
+	.field:first-of-type{
+		margin-bottom: 40px;
+	
+	}
+}
+.lblImg{
+	display: block;
+	position: absolute;
+	left: 0;
+}
+
+
+
+.btnCreate {
+	font-family: $font_1;
+	border: solid 3px $purple;
+	color: $purple;
+	width: 200px;
+	height: 50px;
+	padding: 12px 0px;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+}
+
+
+.postImg {
+	margin-top: 15px;
+	margin-bottom: 25px;
+
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+
+  }
+  .postImg img {
+	width:100%;
+	height:100%;
+	object-position: center;
+	object-fit: cover;
+
+  }
+
+.control{
+		textarea {
+			padding: 10px;
+			display: block;
+			border: 1px solid $black_16;
+			border-radius: 10px;
+			height: 100px;
+			width: 100%;
+		}
+
+		input[type=text] {
+			border: 1px solid $black_16;
+			border-radius: 10px;
+			}
+
+}
+  
+#uploadPostBtn {
+	a {
+		font-family: $font_1;
+		font-size: 0.8em;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		background: $purple;
+		border-radius: 17.5px;
+		padding: 9px 10px 0px 10px;
+		color: $white;
+		box-shadow: 0px 3px 6px $black_16;
+	}
+
+	input[type=file] {
+		display:none;
+	  }
+	
+	  p {
+		  color: $grey;
+		display: inline-block;
+		margin-left: 10px;
+	  }
+  }
+  
+
+.valMessage {
+	  font-family: $font_1;
+	  text-align: center;
+	  padding-top: 15px;
+	  color: $red;
+  }

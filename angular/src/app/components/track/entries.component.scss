@@ -1,0 +1,170 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../assets/fonts/Avenir-Medium.ttf);
+
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+
+.entrySingle {
+	min-height: 250px;
+	background: $white;
+	padding: 15px;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+
+
+	.info { 
+		margin-bottom: 20px;
+	
+		div {
+			display: inline-block;
+			width: 50%;
+	
+			p {
+				font-family: $font_2
+			}
+	
+			label {
+				display: inline-block;
+				width: 100%
+			}
+		}
+		p {
+			margin-bottom: 15px;
+		}
+	
+		span {
+			color: $purple
+	
+	}
+	}
+	
+	.rating { 
+		display: inline-block;
+		margin-bottom: 15px;
+	
+	
+		i {
+			display: inline-block;
+			width: 50px;
+			
+			
+		}
+		
+	}
+}
+
+.entryWrap {
+	
+	&:first-of-type {
+		margin-top: 40px;
+      }
+}
+
+#btnArea {
+	background: none;
+	position: fixed;
+	bottom: 55px;
+	box-shadow: none;
+	z-index: 10000;
+
+}
+
+
+
+
+.small{
+	color: $gray
+}
+
+
+.header {
+	margin-top: 25px;
+
+
+	p {
+		line-height: 0;
+		padding: 0px 0px 10px 0px
+	}
+}
+
+
+.btnNew {
+	display: block;
+	position: absolute;
+	border: 2px solid $white;
+	border-radius: 15px;
+	box-shadow: 2px 2px 10px $black_16;
+	font-family: $font_1;
+	background: $purple;
+	color: $white;
+	width: 60px;
+	height: 60px;
+	padding: 13px 0px;
+	bottom: 40px;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+	text-align: center;
+
+	&:hover{
+		color: $white;
+
+	}
+}
+
+.btnEdit {
+
+	position: absolute;
+	top: 15px;
+	right: 50px;	
+
+}
+
+.btnDelete {
+
+	position: absolute;
+	top: 15px;
+	right: 15px;	
+
+}
+
+
+
+
+
+.icon {
+	color: $gray;
+	font-size: 20px;
+}

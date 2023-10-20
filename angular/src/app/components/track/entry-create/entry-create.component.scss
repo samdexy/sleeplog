@@ -1,0 +1,137 @@
+@import '~css-star-rating/scss/star-rating';
+
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$grey: #797979;
+$red: #A33434;
+
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../../assets/fonts/Avenir-Medium.ttf);
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+.column {
+	min-height: 200px;
+	color: $black;
+	background: $white;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+	
+}
+
+.form{
+	margin-bottom: 50px;
+}
+.btnCreate {
+	font-family: $font_1;
+	border: solid 3px $purple;
+	color: $purple;
+	width: 200px;
+	height: 50px;
+	padding: 12px 0px;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+}
+
+.control{
+	margin-top: 20px;
+	margin-bottom: 0;
+
+	span {
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 30px;
+		font-size: 1.2em;
+		
+	
+		.rating {
+			float: right;
+		}
+
+		input[type=time] {
+			float: right;
+			width: 100px;
+		}
+
+		textarea {
+			padding: 10px;
+			display: block;
+			border: 1px solid $black_16;
+            border-radius: 10px;
+			margin-top: 20px;
+			height: 100px;
+			width: 100%;
+		}
+	}
+}
+  
+.resIcon {
+	display: block;
+	width: 200px;
+	margin: 50px auto;
+
+}
+
+.valMessage {
+	  font-family: $font_1;
+	  text-align: center;
+	  padding-top: 15px;
+	  color: $red;
+  }
+
+  .rating.color-negative .star-container .star {
+	svg {
+	  fill: #0f0;
+	}
+	i {
+	  color: #0f0;
+	}
+  }
+  
+  .rating.color-ok .star-container .star {
+	svg {
+	  fill: $red;
+	}
+	i {
+	  color: $red;
+	}
+  }
+  
+  
+  .rating.color-default .star-container .star {
+	svg {
+	  fill: #ff0;
+	}
+	i {
+	  color: #ff0;
+	}
+  }

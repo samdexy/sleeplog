@@ -1,0 +1,64 @@
+<div class="columns is-mobile is-centered">
+  <div *ngIf="profile && user" class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+    <div class="form">
+      <div class="field">
+        <label class="label">Naam*</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Text input" value="{{user.attributes.name}}" #name>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Profielfoto veranderen</label>
+
+        <div id="upload_button">
+          <label>
+            <input type="file" (change)="onFileChanged($event)">
+            <a>KIES BESTAND</a>
+          </label>
+
+          <p [innerHTML]="fileName"></p>
+
+        </div>
+      </div>
+
+
+
+      <div class="field">
+        <label class="label">Geboortedatum*</label>
+        <div class="control">
+          <input class="input" type="date" value="{{profile.attributes.field_birthday}}" #birthday>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Gemeente*</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="gemeente" value="{{profile.attributes.field_location}}"
+            #location>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">School*</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="school" value="{{profile.attributes.field_school}}" #school>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Tagline</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="tagline" value="{{profile.attributes.field_tagline}}" #tagline>
+        </div>
+      </div>
+
+      <a (click)="editProfile(name, birthday, location, school, tagline)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+      <p class="valMessage" [innerHTML]="msg"></p>
+
+    </div>
+
+  </div>
+</div>

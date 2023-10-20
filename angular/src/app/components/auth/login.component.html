@@ -1,0 +1,25 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+    <form>
+      <div class="field">
+        <label class="label">Gebruikersnaam*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="username" type="text" placeholder="Username" name="username" value="">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Wachtwoord*</label>
+        <div class="control">
+          <input class="input" [(ngModel)]="password" type="password" placeholder="Wachtwoord" name="password" value="">
+        </div>
+      </div>
+      <p class="valMessage" [innerHTML]="msg"></p>
+      <a (click)="login()" class="button is-outlined is-rounded is-medium btnCreate">LOG IN</a>
+    </form>
+
+    <p class="authSwitch">
+      <a routerLink="/register">Registreer</a>
+    </p>
+  </div>
+</div>

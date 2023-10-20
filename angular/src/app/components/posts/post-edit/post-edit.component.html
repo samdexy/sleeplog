@@ -1,0 +1,52 @@
+<div *ngIf="post" class="columns is-mobile is-centered">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+        <div class="form">
+
+            <div class="field">
+                <label id="lblImg" class="label">Verander je foto</label>
+
+                <div id="uploadPostBtn">
+                    <label>
+                        <input type="file" (change)="onFileChanged($event)">
+                        <a>KIES BESTAND</a>
+                    </label>
+
+                    <p [innerHTML]="fileName"></p>
+
+                </div>
+
+                <div class="postImg"  *ngIf="post.post_img;">
+
+                    <img [src]="'http://localhost:8888' + post.post_img.attributes.uri.url" />
+          
+                  </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                        <label class="label">Omschrijving (optioneel)</label>
+
+                        <textarea type="text" rows="5" value="{{post.attributes.field_post_description}}" #descr></textarea>
+                    
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Tags*</label>
+                <div class="control">
+                    <input class="input" type="text" value="{{post.attributes.field_post_tags}}" placeholder="Scheid met komma’s om meerdere tags toe te voegen"
+                        #tags>
+                </div>
+            </div>
+
+
+
+            <a (click)="postFile(descr.value,tags.value, post.attributes.drupal_internal__nid, post.attributes.field_post_likes)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+            <p class="valMessage" [innerHTML]="msg"></p>
+
+        </div>
+
+    </div>
+</div>

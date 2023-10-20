@@ -1,0 +1,64 @@
+<div *ngIf="user" class="columns is-mobile is-centered">
+  <div class="column mapWrap is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+
+    <agm-map class="map" [latitude]="lat" [longitude]="lng">
+
+      <agm-marker *ngFor="let profile of profiles; let i = index" [latitude]="profile.attributes.field_lat" [longitude]="profile.attributes.field_lng"
+        [iconUrl]="labelOptions">
+        <agm-info-window>
+          <strong *ngIf="profile.username == user.attributes.name;else notMeMark">{{profile.username}} (ik)</strong>
+          <ng-template #notMeMark>
+            <strong>{{profile.username}}</strong>
+
+          </ng-template>
+        </agm-info-window>
+      </agm-marker>
+    </agm-map>
+  </div>
+</div>
+
+<div *ngIf="profiles && user" class="columns is-mobile is-centered">
+  <div class="column friendList is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+    <p class="small">Mijn vrienden</p>
+    <div *ngFor="let profile of profiles | orderBy:'attributes.distance':false">
+
+      <a *ngIf="profile.friend == true" class="listItem" routerLink="/map/profile/{{profile.id}}">
+        <div *ngIf="profile.profile_img;else placeholder" class="avatarThumb">
+
+          <figure [ngStyle]="{ 'background-image': 'url(' + 'http://localhost:8888' + profile.profile_img.attributes.uri.url + ')'}">
+          </figure>
+
+        </div>
+        <p class="meItem" *ngIf="profile.username == user.attributes.name;else notMeItem">{{profile.username}} (ik)</p>
+        <p class="small distance">afstand: {{profile.attributes.distance}} km</p>
+
+        <ng-template #notMeItem>
+          <p>{{profile.username}}</p>
+        </ng-template>
+        <hr>
+      </a>
+
+    </div>
+    <a routerLink="/map/search" class="button is-outlined is-rounded is-medium btnPrimary">ZOEK</a>
+    <a *ngIf="nNotifications > 0;else noRequests" routerLink="/map/requests" class="btnNotification"><i class="fas fa-envelope"></i></a>
+  </div>
+
+</div>
+
+<app-nav [navTemplate]="navTemplate"></app-nav>
+
+<ng-template #noRequests>
+    <a class="btnNotificationInactive"><i class="fas fa-envelope"></i></a>
+
+</ng-template>
+
+<ng-template #placeholder>
+  <div class="avatarThumb">
+
+    <figure style="background-image: url('http://www.redsaludtocache.gob.pe/wp-content/themes/corporatebusiness/images/thumbnail.png')">
+    </figure>
+
+  </div>
+</ng-template>

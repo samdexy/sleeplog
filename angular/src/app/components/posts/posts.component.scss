@@ -1,0 +1,216 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+$red: #A33434;
+
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../assets/fonts/Avenir-Medium.ttf);
+
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+
+.postSingle {
+	min-height: 430px;
+	background: $white;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+
+	.small{
+		color: $gray
+	}
+	
+	
+
+	
+
+	.header {
+		margin-top: 0px;
+		position: relative;
+		padding: 15px 15px 0px 15px;
+
+	
+		p {
+			display: inline-block;
+			line-height: 0;
+			margin: 25px 0px 0px 65px;
+			font-size: 1.2em;
+		}
+
+		.avatarThumb {
+			display: inline-block;
+			position: absolute;
+			left: 15px;
+			top: 15px;
+			width: 40px;
+			height: 40px;
+			margin-right: 15px; 
+		
+			figure {
+				height: 40px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				border-radius: 50%;
+			
+			
+			}
+		}
+
+	}
+
+	.postImg {
+		border-top: 1px solid $gray;
+		margin-top: 15px;
+		margin-bottom: 25px;
+
+		position: relative;
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+
+	  }
+	  .postImg img {
+		width:100%;
+		height:100%;
+		object-position: center;
+		object-fit: cover;
+
+	  }
+
+	  .likes {
+		a {
+			color: $red;
+			padding-left: 15px;
+		}
+
+		display: block;
+		position: absolute;
+		right: 15px;
+		bottom: 15px;
+		text-align: right;
+		color: $red;
+		font-size: 1.2em;
+	}
+
+	.info { 
+		padding: 0px 15px 5px 15px;
+		margin-bottom: 20px;
+		position: relative;
+
+		
+
+
+		div {
+			display: inline-block;
+			width: 50%;
+	
+			p {
+				font-family: $font_2
+			}
+	
+			label {
+				display: inline-block;
+				width: 100%
+			}
+		}
+		p {
+			margin-bottom: 15px;
+		}
+	
+	}
+
+	.btnEdit {
+
+		position: absolute;
+		top: 20px;
+		right: 50px;	
+	
+	}
+	
+	.btnDelete {
+	
+		position: absolute;
+		top: 20px;
+		right: 15px;	
+	
+	}
+}
+
+.postsWrap {
+	
+	&:first-of-type {
+		margin-top: 40px;
+	  }
+	  
+	  margin-bottom: 160px;
+
+}
+
+#btnArea {
+	background: none;
+	position: fixed;
+	bottom: 55px;
+	box-shadow: none;
+	z-index: 10000;
+
+}
+
+.btnNew {
+	display: block;
+	position: absolute;
+	border: 2px solid $white;
+	border-radius: 15px;
+	box-shadow: 2px 2px 10px $black_16;
+	font-family: $font_1;
+	background: $purple;
+	color: $white;
+	width: 60px;
+	height: 60px;
+	padding: 13px 0px;
+	bottom: 40px;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+	text-align: center;
+
+	&:hover{
+		color: $white;
+
+	}
+}
+
+
+.icon {
+	color: $gray;
+	font-size: 20px;
+	
+}

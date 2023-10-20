@@ -1,0 +1,46 @@
+<div class="columns is-mobile is-centered">
+    <div class="column is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-third-fullhd ">
+
+
+        <div class="form">
+
+            <div class="field">
+                <label class="label">Upload je foto</label>
+
+                <div id="upload_button">
+                    <label>
+                        <input type="file" (change)="onFileChanged($event)">
+                        <a>KIES BESTAND</a>
+                    </label>
+
+                    <p [innerHTML]="fileName"></p>
+
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                        <label class="label">Omschrijving (optioneel)</label>
+
+                        <textarea type="text" rows="5" #descr></textarea>
+                    
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Tags*</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Scheid met komma’s om meerdere tags toe te voegen"
+                        #tags>
+                </div>
+            </div>
+
+
+
+            <a (click)="postFile(descr.value,tags.value)" class="button is-outlined is-rounded is-medium btnCreate">OPSLAAN</a>
+            <p class="valMessage" [innerHTML]="msg"></p>
+
+        </div>
+
+    </div>
+</div>

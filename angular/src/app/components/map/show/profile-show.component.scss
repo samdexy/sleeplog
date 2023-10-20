@@ -1,0 +1,152 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+//fonts
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+
+
+//urls
+$url_0: url(../../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+.column {
+	min-height: 150px;
+	color: $black;
+	background: $white;
+	margin-bottom: 40px;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 3px 3px 6px $black_16;
+	position: relative;
+}
+
+.columns {
+	&:last-of-type {
+		margin-bottom: 50px;
+      }
+}
+ 
+#lblGoal{
+	width: 200px;
+	height: 50px;
+	padding: 12px 0px;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+
+	.icGoal {
+	display: block;
+	position: absolute;
+	font-size: 2em;
+	padding-right: 10px;
+	color: $purple;
+	opacity: 0.5;
+
+	}
+}
+
+.small{
+	color: $gray
+}
+
+.avatar {
+	width: 150px;
+	height: 150px;
+
+	margin: -75px auto 20px auto;
+
+
+}
+
+#thumbnail {
+	height: 150px;
+
+	background-size: cover;
+    background-repeat: no-repeat;
+	background-position: 50% 50%;
+	
+	border-radius: 50%;
+	border: 5px #ffffff solid;
+	box-shadow: 0 2px 3px $gray_op10, 0 0 0 0px $gray_op10;
+
+}
+
+.btnPrimary {
+	font-family: $font_1;
+	border: solid 3px $purple;
+	color: $purple;
+	width: 200px;
+	height: 50px;
+	padding: 12px 0px;
+	display: block;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+}
+
+.btnEdit {
+
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	
+
+}
+
+.resIcon {
+	display: block;
+	width: 100px;
+	margin: 15px auto;
+
+}
+.btnLogout{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	color: $purple;
+	text-decoration: underline;
+	text-align: center;
+}
+
+.info { 
+	margin-bottom: 20px;
+}
+.icList { 
+	margin-right: 10px;
+	color: $purple;
+	opacity: 0.5;
+	
+
+}
+.quote{
+	font-style: italic;
+}
+
+.icon {
+	color: $gray;
+	font-size: 20px;
+	
+}

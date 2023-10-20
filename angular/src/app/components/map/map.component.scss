@@ -1,0 +1,197 @@
+//colors
+$black: #000000;
+$white: #ffffff;
+$black_16: rgba(0, 0, 0, 0.16);
+$purple: #876bd1;
+$purple_op6: rgba(135,107,209, 0.6);
+
+$gray_op10: rgba(10,10,10,.1);
+
+$gray: rgb(155, 155, 155);
+$blue: #648ED0;
+
+$font_0: Avenir Next Reg;
+$font_1: Avenir Next Dem;
+$font_2: Avenir Next Med;
+
+
+//urls
+$url_0: url(../../../assets/fonts/AvenirNextLTPro-Regular.otf);
+$url_1: url(../../../assets/fonts/AvenirNextLTPro-Demi.otf);
+$url_2: url(../../../assets/fonts/Avenir-Medium.ttf);
+
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0 format("truetype");
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_1 format("truetype");
+}
+
+@font-face {
+	font-family: $font_2;
+	src: $url_2 format("truetype");
+}
+
+
+.map {
+    display: block;
+    width: 100%;
+    height: 350px;
+    
+}
+
+.mapWrap {
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.small{
+	color: $gray
+}
+
+.friendList {
+	position: relative;
+	min-height: 250px;
+	background: $white;
+	padding: 15px 15px 60px;
+	margin-bottom: 80px;
+	box-shadow: 3px 3px 6px $black_16;
+
+
+	div {
+		margin-top: 30px;
+		position: relative;
+		
+		/* hr{
+			&:last-child{
+				display: block;
+				margin-bottom: 0px
+			}
+		} */
+
+	}
+
+	div p {
+		display: block;
+		position: absolute;
+		left: 75px;
+		top: 15px;
+		font-size: 1.2em;
+		line-height: 0em;
+
+
+	}
+
+	.listItem {
+
+		display: block;
+		margin: 0;
+		padding: 0;
+		color: $black
+	}
+
+	.meItem{
+		color: #876bd1;
+		font-family: $font_2;
+	}
+
+	.distance{
+		margin-top: 20px;
+		font-size: 1em
+	}
+}
+
+.avatarThumb {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	margin-right: 15px; 
+
+	figure {
+		height: 50px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		border-radius: 50%;
+	
+	
+	}
+}
+
+.btnPrimary {
+	font-family: $font_1;
+	border: none;
+	color: $white;
+	width: 200px;
+	height: 50px;
+	padding: 12px 0px;
+	box-shadow: 0px 3px 6px $black_16;
+	display: block;
+	background: linear-gradient(to right, $purple , $purple_op6);;
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+	font-size: 1em;
+	margin: auto;
+	
+	&:hover{
+		color: $white;
+
+	}
+}
+
+.btnNotification {
+	font-family: $font_1;
+	color: $purple;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	//box-shadow: 0px 3px 6px $black_16;
+	border: 3px solid $purple;
+	border-radius: 25px;
+	display: block;
+	background: $white;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	font-size: 1.6em;
+	padding: 6px;
+
+
+	&:hover{
+		color: $purple;
+
+	}
+}
+
+.btnNotificationInactive {
+	font-family: $font_1;
+	color: $gray;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border: 3px solid $gray;
+	border-radius: 25px;
+	display: block;
+	background: $white;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+	font-size: 1.6em;
+	padding: 6px;
+
+
+	&:hover{
+		color: $gray;
+
+	}
+}
+
